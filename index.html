@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>VPGC Field Tracker v2.4 Shell</title>
+<title>VPGC Field Tracker v2.5 Shell</title>
 <style>
 :root{--bg:#eef3ef;--card:#ffffff;--ink:#13201b;--muted:#66736d;--line:#d9e2dd;--green:#1f7a4d;--green2:#e8f5ee;--red:#b93a3a;--red2:#fdecec;--amber:#a96713;--amber2:#fff4df;--blue:#266fb3;--blue2:#eaf3ff;--purple:#6d4aa2;--purple2:#f1edff;--shadow:0 8px 25px rgba(19,32,27,.08);--radius:18px;}
 *{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{max-width:1080px;margin:0 auto;padding:14px 12px 88px}.topbar{position:sticky;top:0;z-index:20;background:linear-gradient(180deg,var(--bg) 72%,rgba(238,243,239,.7));padding:10px 0 8px;backdrop-filter:blur(6px)}.brand{display:flex;align-items:center;gap:10px}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--green),#3fa56f);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:var(--shadow)}.title{font-weight:900;font-size:22px;color:var(--green);line-height:1}.subtitle{font-size:12px;color:var(--muted);margin-top:2px}.topActions{margin-left:auto;display:flex;gap:8px}.iconBtn,.pillBtn,.primaryBtn,.dangerBtn,.ghostBtn{border:0;border-radius:999px;padding:10px 14px;background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(0,0,0,.05);font-weight:800}.primaryBtn{background:var(--green);color:white}.dangerBtn{background:var(--red);color:white}.ghostBtn{background:transparent;border:1px solid var(--line);box-shadow:none}.pillBtn.active{background:var(--green);color:white}.tabs{display:flex;gap:8px;overflow:auto;padding:10px 0 4px}.tab{white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--muted);padding:10px 12px;border-radius:999px;font-weight:900}.tab.active{background:var(--green);color:white;border-color:var(--green)}.grid{display:grid;gap:12px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:8px}.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}.stat .num{font-size:25px;font-weight:1000;line-height:1;color:var(--green)}.stat .label{font-size:12px;color:var(--muted);font-weight:800}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-top:12px}.panelHead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}.panelTitle{font-weight:1000;font-size:18px}.sectionTitle{font-weight:1000;color:var(--green);margin:16px 0 8px;display:flex;align-items:center;gap:8px}.cards{display:grid;gap:10px}.farmCard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 3px 10px rgba(19,32,27,.04);display:grid;gap:8px}.farmCard.clickable{cursor:pointer}.farmCard.clickable:hover{border-color:#a8cabb}.cardTop{display:flex;justify-content:space-between;gap:10px}.farmName{font-weight:1000;font-size:16px}.tank{color:var(--green);font-weight:900}.meta{font-size:12px;color:var(--muted);line-height:1.35}.badges{display:flex;flex-wrap:wrap;gap:6px}.badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:1000;text-transform:uppercase;letter-spacing:.01em}.badge.issue{background:var(--red2);color:var(--red)}.badge.watch{background:var(--amber2);color:var(--amber)}.badge.active,.badge.good,.badge.complete{background:var(--green2);color:var(--green)}.badge.uncertain{background:var(--purple2);color:var(--purple)}.badge.product,.badge.rx{background:var(--blue2);color:var(--blue)}.badge.gut{background:#f1e6db;color:#7a3d16}.badge.heat{background:#fff1d6;color:#9d5d00}.noteLine{font-size:13px;color:#34433c;line-height:1.35}.searchRow{display:flex;gap:8px;position:sticky;top:108px;background:var(--bg);z-index:9;padding:8px 0}.search{width:100%;border:1px solid var(--line);border-radius:999px;padding:12px 14px;background:#fff;outline:none}.filterChips{display:flex;gap:8px;overflow:auto;padding:3px 0 8px}.chip{border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);padding:8px 10px;font-weight:900;font-size:13px;white-space:nowrap}.chip.active{background:var(--green);border-color:var(--green);color:#fff}.detailHeader{display:flex;align-items:start;gap:10px;margin-top:10px}.backBtn{border:0;background:#fff;border-radius:12px;padding:10px 12px;font-weight:1000;box-shadow:var(--shadow)}.detailTitle{font-size:24px;font-weight:1000;line-height:1.05}.detailSub{color:var(--muted);font-weight:800;margin-top:4px}.infoGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.info{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px}.info .k{font-size:11px;color:var(--muted);font-weight:1000;text-transform:uppercase}.info .v{font-weight:900;font-size:13px;word-break:break-word;margin-top:4px}.seg{display:flex;gap:8px;margin-top:12px;overflow:auto}.seg button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-weight:900;color:var(--muted)}.seg button.active{background:var(--green);color:#fff;border-color:var(--green)}.chartWrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fff}.chart{border-collapse:collapse;width:100%;min-width:0;table-layout:fixed}.chart th,.chart td{border:1px solid var(--line);padding:7px 5px;font-size:12px;text-align:left;vertical-align:top}.chart th{background:#f4f8f6;color:var(--green);font-weight:1000}.chart th:first-child,.chart td:first-child{width:28%}.chart th:last-child,.chart td:last-child{width:14%}.chart td.num{text-align:right;font-variant-numeric:tabular-nums}.chart tr.sofar td{background:#fff9ea}.chart tr.uncertain td{background:#f7f0ff}.chartMeta{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;margin-bottom:10px}.chartMeta div{padding:9px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);font-size:12px}.chartMeta b{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.formGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.field label{display:block;font-size:12px;font-weight:1000;color:var(--muted);margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;outline:none}.field textarea{min-height:88px}.modalBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:50;display:none;align-items:end}.modalBackdrop.open{display:flex}.modal{background:var(--bg);width:100%;max-height:92vh;overflow:auto;border-radius:24px 24px 0 0;padding:16px;box-shadow:0 -15px 35px rgba(0,0,0,.18)}.modalInner{max-width:720px;margin:0 auto}.modalHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.copyBox{white-space:pre-wrap;background:#0e1a15;color:#eef7f1;border-radius:16px;padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.45;overflow:auto}.productRow,.aminoRow,.coverageRow{display:grid;gap:5px;border:1px solid var(--line);background:#fff;border-radius:16px;padding:11px}.productRow{grid-template-columns:1fr auto}.rowTitle{font-weight:1000}.rowSub{font-size:12px;color:var(--muted)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.footerNav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:30;padding:7px 8px env(safe-area-inset-bottom)}.footerNav .navInner{max-width:920px;width:100%;display:flex;gap:4px;overflow:auto}.navItem{border:0;background:transparent;border-radius:14px;color:var(--muted);padding:8px 8px;font-size:10px;font-weight:1000;min-width:62px;flex:0 0 auto}.navItem.active{background:var(--green2);color:var(--green)}.empty{color:var(--muted);padding:18px;text-align:center}.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:#0e1a15;color:#fff;padding:10px 14px;border-radius:999px;z-index:100;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}.miniBtn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 9px;font-size:11px;font-weight:900;color:var(--muted)}.miniBtn.danger{color:var(--red);border-color:#f0c7c7}.noteDone{opacity:.62;text-decoration:line-through}.dateHint{font-size:12px;color:var(--muted);font-weight:800;margin-top:4px}.dailyCell{min-width:0;word-break:break-word;text-align:center!important}.inlineHelp{background:#eef7f1;border:1px solid #cfe1d6;border-radius:14px;padding:10px;margin:8px 0;color:#34433c;font-size:13px;line-height:1.35}.chart tr.entered td{background:#e8f7ed}.chart tr.ready td{background:#f3fbf6}.chart tr.verify td{background:#fff0f0}.mixResult{background:#0e1a15;color:#eef7f1;border-radius:16px;padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;line-height:1.45;white-space:pre-wrap}.warnBox{background:#fff4df;border:1px solid #f0d6a8;border-radius:14px;padding:10px;font-size:13px;line-height:1.35;color:#54340a}.completedAction{opacity:.55;filter:grayscale(.2)}.completedAction .rowTitle:after{content:" done";font-size:10px;text-transform:uppercase;color:var(--green);background:var(--green2);border-radius:999px;padding:3px 6px;margin-left:6px}.mixSelectNote{background:#f4f8f6;border:1px solid var(--line);border-radius:14px;padding:9px;font-size:12px;color:var(--muted);line-height:1.35}.doseBadge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:1000;background:var(--blue2);color:var(--blue);margin:2px}.contextMuted{opacity:.62}.bigAction{font-size:15px;padding:12px 16px}.field small{display:block;color:var(--muted);font-weight:700;margin-top:4px}.photoGrid{display:grid;gap:10px}.photoCard{border:1px solid var(--line);border-radius:16px;background:#fff;padding:10px;display:grid;gap:8px}.photoThumb{width:100%;max-height:220px;object-fit:contain;border-radius:12px;background:#f4f8f6;border:1px solid var(--line)}.photoEntryBox{position:sticky;top:0;z-index:5;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line);margin-bottom:10px}.photoEntryBox img{width:100%;max-height:42vh;object-fit:contain;border-radius:14px;border:1px solid var(--line);background:#fff}.snapshotRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px}.photoInput{border:2px dashed var(--line);border-radius:16px;padding:18px;background:#fff;width:100%}@media (min-width:800px){.app{padding:18px 18px 96px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.infoGrid{grid-template-columns:repeat(4,minmax(0,1fr))}.formGrid{grid-template-columns:repeat(3,minmax(0,1fr))}.modalBackdrop{align-items:center}.modal{border-radius:24px;max-width:760px;margin:auto}.stats{grid-template-columns:repeat(6,minmax(0,1fr))}}@media (max-width:540px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.chartMeta{grid-template-columns:repeat(2,1fr)}.formGrid{grid-template-columns:1fr}.title{font-size:19px}.topActions .ghostBtn{display:none}.farmCard{padding:11px}.panel{padding:12px}.searchRow{top:102px}.navItem{font-size:10px}}
@@ -182,7 +182,7 @@ function normalizeMortalityEntry(e){
 function normalizeState(s){
   if(!s || !s.flocks) return s;
   s.version = s.version || 'unknown';
-  s.appShellVersion = 'v2.4';
+  s.appShellVersion = 'v2.5';
   s.completedActions = Array.isArray(s.completedActions)?s.completedActions:[];
   s.settings = s.settings || {};
   s.settings.waterGal1000ByWeek = s.settings.waterGal1000ByWeek || {};
@@ -202,10 +202,10 @@ function normalizeState(s){
 function runDataCleanup(){ state=normalizeState(state); save(); render(); toast('Data cleanup applied'); }
 function displayMortality(e){ return e.mortality!=null ? e.mortality : (e.raw || '?'); }
 function aminoReadyRows(f){
-  return (f.mortalityEntries||[]).filter(e=>normalizeMortalityEntry(e).aminoReady).map(e=>`${f.farm} | ${f.tank} | ${e.label} | ${e.mortality} | ${f.estimatedCurrentCount||'?'}`);
+  return (f.mortalityEntries||[]).map((e,i)=>({e:normalizeMortalityEntry(e),i})).filter(x=>x.e.aminoReady).map(x=>`${f.farm} | ${f.tank} | ${x.e.label} | ${rowDateText(f,x.e,x.i)||'?'} | ${x.e.mortality} | ${f.estimatedCurrentCount||f.startHeadcount||'?'}`);
 }
 function heldMortalityRows(f){
-  return (f.mortalityEntries||[]).filter(e=>{e=normalizeMortalityEntry(e); return !e.aminoReady && !e.aminoEntered && !/total/i.test(String(e.label||''));}).map(e=>`${f.farm} ${f.tank} — ${e.label}: ${displayMortality(e)}${e.soFar?' so far':''}${e.uncertain?' ?':''}`);
+  return (f.mortalityEntries||[]).map((e,i)=>({e:normalizeMortalityEntry(e),i})).filter(x=>!x.e.aminoReady && !x.e.aminoEntered && !/total/i.test(String(x.e.label||''))).map(x=>`${f.farm} ${f.tank} — ${x.e.label}: ${rowDateText(f,x.e,x.i)||'date span needs start date'} — ${displayMortality(x.e)}${x.e.soFar?' so far':''}${x.e.uncertain?' ?':''}`);
 }
 function activeFlocks(){ return state.flocks.filter(f=>!f.archived); }
 function hasText(f,terms){ const t=Object.values(f).join(' ').toLowerCase(); return terms.some(x=>t.includes(x)); }
@@ -458,13 +458,18 @@ function renderFlocks(){
   <div class="panel"><div class="panelHead"><div><div class="panelTitle">Active Flocks by Farm</div><div class="meta">Grouped by farm family. Example: Cobblestone opens, then #1/#2 split inside. Search no longer redraws every keypress on iPhone.</div></div><span class="badge active">${farmNames.length} farms • ${fl.length} houses</span></div><div class="toolbar"><button class="ghostBtn" onclick="expandAllFarms(activeFlocks())">Expand all</button><button class="ghostBtn" onclick="collapseAllFarms()">Collapse all</button></div><div class="cards">${groupHtml}</div></div>`;
 }
 
-function rowDateText(e){ return String(e.dateSpan||e.span||''); }
+function rowDateText(f,e,i){
+  const saved=String((e&&e.dateSpan)||(e&&e.span)||'').trim();
+  if(saved) return saved;
+  const wk=weekNumberForEntry(f,e,i);
+  return wk ? weekDateSpanForFlock(f,wk) : '';
+}
 function dateFromText(t){
   const m=String(t||'').match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);
   if(!m) return null; let y=parseInt(m[3],10); if(y<100) y+=2000; return new Date(y,parseInt(m[1],10)-1,parseInt(m[2],10));
 }
-function dateInRange(e,start,end){
-  if(!start&&!end) return true; const d=dateFromText(rowDateText(e)); if(!d) return true;
+function dateInRange(f,e,start,end){
+  if(!start&&!end) return true; const d=dateFromText(rowDateText(f,e)); if(!d) return true;
   if(start && d < new Date(start+'T00:00:00')) return false;
   if(end && d > new Date(end+'T23:59:59')) return false;
   return true;
@@ -480,7 +485,7 @@ function aminoCandidateRows(){
       let include=false;
       if(filters.aminoMode==='completed') include=ready && !partial && !uncertain;
       else if(filters.aminoMode==='fourweek') include=true;
-      else if(filters.aminoMode==='range') include=dateInRange(x.e,filters.aminoStart,filters.aminoEnd) && (filters.aminoIncludePartial || (!partial && !uncertain));
+      else if(filters.aminoMode==='range') include=dateInRange(x.f,x.e,filters.aminoStart,filters.aminoEnd) && (filters.aminoIncludePartial || (!partial && !uncertain));
       if(include) rows.push({...x,ready,partial,uncertain});
     });
   });
@@ -493,12 +498,12 @@ function aminoCandidateRows(){
 }
 function renderAmino(){
   const rows=aminoCandidateRows();
-  const copy=rows.map(r=>`${r.f.farm} | ${r.f.tank} | ${r.e.label||'?'} | ${displayMortality(r.e)} | ${r.f.estimatedCurrentCount||r.f.startHeadcount||'?'}${r.partial?' | partial/so far':''}${r.uncertain?' | verify':''}`).join('\n');
+  const copy=rows.map(r=>`${r.f.farm} | ${r.f.tank} | ${r.e.label||'?'} | ${rowDateText(r.f,r.e,r.i)||'?'} | ${displayMortality(r.e)} | ${r.f.estimatedCurrentCount||r.f.startHeadcount||'?'}${r.partial?' | partial/so far':''}${r.uncertain?' | verify':''}`).join('\n');
   document.getElementById('main').innerHTML=`<div class="panel"><div class="panelHead"><div><div class="panelTitle">Amino Entry Modes</div><div class="meta">Use completed weeks for clean entry. Use 4-week catch-up or custom date range before vacation/weekend cleanup.</div></div><button class="primaryBtn" onclick="copyText(document.getElementById('aminoCopyText').textContent)">Copy Rows</button></div>
   <div class="modeBar">${[['completed','Completed weeks only'],['fourweek','4-week catch-up'],['range','Custom date range']].map(x=>`<button class="${filters.aminoMode===x[0]?'active':''}" onclick="filters.aminoMode='${x[0]}'; renderAmino()">${x[1]}</button>`).join('')}</div>
   ${filters.aminoMode==='range'?`<div class="formGrid"><div class="field"><label>Start date</label><input type="date" value="${esc(filters.aminoStart)}" onchange="filters.aminoStart=this.value; renderAmino()"></div><div class="field"><label>End date</label><input type="date" value="${esc(filters.aminoEnd)}" onchange="filters.aminoEnd=this.value; renderAmino()"></div><div class="field"><label>Partial weeks</label><select onchange="filters.aminoIncludePartial=this.value==='yes'; renderAmino()"><option value="no" ${!filters.aminoIncludePartial?'selected':''}>Hide partial/current</option><option value="yes" ${filters.aminoIncludePartial?'selected':''}>Include partial/current</option></select></div></div>`:''}
   <div class="inlineHelp">Rows marked current/uncertain stay out of completed-week mode. Custom range is for real-life catch-up when you need to enter partials before vacation; partial rows are labeled.</div>
-  <div class="chartWrap"><table class="tinyTable"><thead><tr><th>Farm</th><th>House</th><th>Week/date</th><th>Mortality</th><th>Status</th><th>Action</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.f.farm)}</td><td>${esc(r.f.tank)}</td><td>${esc(r.e.label||'?')}<br><span class="meta">${esc(rowDateText(r.e)||'no date span')}</span></td><td>${esc(displayMortality(r.e))}</td><td>${r.partial?'<span class="badge watch">partial</span>':''}${r.uncertain?'<span class="badge uncertain">verify</span>':''}${r.ready&&!r.partial&&!r.uncertain?'<span class="badge active">ready</span>':''}</td><td><button class="miniBtn" onclick="openFlock('${r.f.id}')">open</button><button class="miniBtn" onclick="toggleMortalityEntered('${r.f.id}',${r.i}); view='amino'; detailId=null; renderAmino();">entered</button></td></tr>`).join('') || '<tr><td colspan="6" class="empty">No rows for this mode.</td></tr>'}</tbody></table></div><pre id="aminoCopyText" style="display:none">${esc(copy)}</pre></div>`;
+  <div class="chartWrap"><table class="tinyTable"><thead><tr><th>Farm</th><th>House</th><th>Week/date</th><th>Mortality</th><th>Status</th><th>Action</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.f.farm)}</td><td>${esc(r.f.tank)}</td><td>${esc(r.e.label||'?')}<br><span class="meta">${esc(rowDateText(r.f,r.e,r.i)||'date span needs start date')}</span></td><td>${esc(displayMortality(r.e))}</td><td>${r.partial?'<span class="badge watch">partial</span>':''}${r.uncertain?'<span class="badge uncertain">verify</span>':''}${r.ready&&!r.partial&&!r.uncertain?'<span class="badge active">ready</span>':''}</td><td><button class="miniBtn" onclick="openFlock('${r.f.id}')">open</button><button class="miniBtn" onclick="toggleMortalityEntered('${r.f.id}',${r.i}); view='amino'; detailId=null; renderAmino();">entered</button></td></tr>`).join('') || '<tr><td colspan="6" class="empty">No rows for this mode.</td></tr>'}</tbody></table></div><pre id="aminoCopyText" style="display:none">${esc(copy)}</pre></div>`;
 }
 function gpsTextForFarm(f){ return f.lockedGPS||f.gps||f.gpsCoords||f.coordinates||f.plusCode||f.address||f.location||''; }
 function gpsConfidence(f){ return f.gpsConfidence||f.locationConfidence||(/^-?\d/.test(String(gpsTextForFarm(f)))?'locked GPS':'not set'); }
@@ -533,6 +538,73 @@ function getFlockHeadcount(f){
   return {value:m?parseInt(m[0],10):null, source:src+' — '+txt, uncertain:/\?|about|approx|range|verify|unknown|null|-/.test(txt)};
 }
 function parseAgeWeeks(f){ const s=String(f?.age||''); const m=s.match(/(\d+)\s*w/i); return m?parseInt(m[1],10):null; }
+
+function parseAnyDate(t){
+  const s=String(t||'').trim(); if(!s || s==='?') return null;
+  let m=s.match(/(\d{4})[-\/](\d{1,2})[-\/](\d{1,2})/);
+  if(m){ const d=new Date(parseInt(m[1],10),parseInt(m[2],10)-1,parseInt(m[3],10)); return isNaN(d)?null:d; }
+  m=s.match(/(\d{1,2})\/(\d{1,2})\/(\d{2,4})/);
+  if(m){ let y=parseInt(m[3],10); if(y<100) y+=2000; const d=new Date(y,parseInt(m[1],10)-1,parseInt(m[2],10)); return isNaN(d)?null:d; }
+  return null;
+}
+function addDays(d,n){ const x=new Date(d.getFullYear(),d.getMonth(),d.getDate()); x.setDate(x.getDate()+n); return x; }
+function fmtMDYY(d){ const yy=String(d.getFullYear()).slice(-2); return (d.getMonth()+1)+'/'+d.getDate()+'/'+yy; }
+function flockStartInfo(f){
+  const fields=[['official start',f.officialStart],['original start',f.originalStart],['birthdate',f.birthdate],['hatch/start',f.hatchDate],['start date',f.startDate],['date placed',f.datePlaced]];
+  for(const [label,val] of fields){ const d=parseAnyDate(val); if(d) return {date:d,source:label,text:String(val)}; }
+  return {date:null,source:'missing',text:''};
+}
+function parseWeekNumberFromText(t){ const m=String(t||'').match(/\bweek\s*(\d{1,2})\b/i); return m?parseInt(m[1],10):null; }
+function explicitEntryWeek(e){
+  return parseWeekNumberFromText(e&&e.label) || parseWeekNumberFromText(e&&e.week) || parseWeekNumberFromText(e&&e.raw);
+}
+function currentWeekNumberForFlock(f){
+  const nums=[];
+  const add=n=>{ if(n && isFinite(n) && n>0 && n<60) nums.push(n); };
+  add(parseWeekNumberFromText(f&&f.chartWeekShown));
+  add(parseWeekNumberFromText(f&&f.currentWeek));
+  if(f && f.currentWeek && /^\d+$/.test(String(f.currentWeek))) add(parseInt(f.currentWeek,10));
+  const ageText=String(f&&f.age||'');
+  const chartM=ageText.match(/chart\s*shows\s*week\s*(\d{1,2})/i); if(chartM) add(parseInt(chartM[1],10));
+  const ageM=ageText.match(/(\d{1,2})\s*w/i); if(ageM) add(parseInt(ageM[1],10)+1);
+  (f&&f.mortalityEntries||[]).forEach(e=>add(explicitEntryWeek(e)));
+  return nums.length?Math.max(...nums):null;
+}
+function weekNumberForEntry(f,e,i){
+  let n=explicitEntryWeek(e); if(n) return n;
+  const txt=String((e&&e.label)||'')+' '+String((e&&e.raw)||'');
+  if(/current|so\s*far|partial/i.test(txt)){
+    const explicit=(f&&f.mortalityEntries||[]).map(explicitEntryWeek).filter(Boolean);
+    const cur=currentWeekNumberForFlock(f);
+    return cur || (explicit.length?Math.max(...explicit)+1:null);
+  }
+  return null;
+}
+function weekDateSpanForFlock(f,week){
+  const info=flockStartInfo(f); if(!info.date || !week) return '';
+  const start=addDays(info.date,(week-1)*7); const end=addDays(start,6);
+  return fmtMDYY(start)+'–'+fmtMDYY(end);
+}
+function entryDisplayLabel(f,e,week){
+  const label=String((e&&e.label)||'').trim();
+  if(label && !/^week\s*\?$/i.test(label)){
+    if(/current|so\s*far|partial/i.test(label) && week && !/week\s*\d+/i.test(label)) return 'Week '+week+' — '+label;
+    return label;
+  }
+  return week?'Week '+week:'Week ?';
+}
+function buildWholeChartRows(f){
+  const entries=(f.mortalityEntries||[]).map((e,i)=>({e:normalizeMortalityEntry(e),i}));
+  const max=currentWeekNumberForFlock(f) || (entries.length?Math.max(...entries.map(x=>weekNumberForEntry(f,x.e,x.i)||0)):0);
+  const used=new Set(); const rows=[];
+  for(let w=1; w<=max; w++){
+    const matches=entries.filter(x=>!used.has(x.i) && weekNumberForEntry(f,x.e,x.i)===w);
+    if(matches.length){ matches.forEach(x=>{ used.add(x.i); rows.push({week:w,e:x.e,i:x.i,synthetic:false,dateSpan:rowDateText(f,x.e,x.i)||weekDateSpanForFlock(f,w)}); }); }
+    else rows.push({week:w,i:-1,synthetic:true,dateSpan:weekDateSpanForFlock(f,w),e:{label:'Week '+w,days:{},raw:'',mortality:null,aminoReady:false,aminoEntered:false,uncertain:false,soFar:false}});
+  }
+  entries.forEach(x=>{ if(!used.has(x.i)) rows.push({week:weekNumberForEntry(f,x.e,x.i),e:x.e,i:x.i,synthetic:false,dateSpan:rowDateText(f,x.e,x.i)}); });
+  return rows;
+}
 function productById(id){ return MIX_PRODUCTS.find(p=>p.id===id) || MIX_PRODUCTS[0]; }
 function mixFarmOptionValue(family){ return 'farm::'+encodeURIComponent(family); }
 function mixSelectionFlocks(sel){
@@ -613,7 +685,7 @@ function renderBackup(){
   const photoCount=photoList.length;
   const snapRows=snaps.map(sn=>`<div class="snapshotRow"><div><div class="rowTitle">${esc(sn.date)}</div><div class="rowSub">${esc(sn.label||'Auto snapshot')} • restore if you fat-fingered something</div></div><div class="toolbar" style="margin:0"><button class="miniBtn" onclick="restoreSnapshot('${sn.id}')">restore</button><button class="miniBtn danger" onclick="deleteSnapshot('${sn.id}')">delete</button></div></div>`).join('') || '<div class="empty">No snapshots yet. They start saving after edits/imports.</div>';
   const photoRows=photoList.slice(0,20).map(p=>`<div class="photoCard"><div class="cardTop"><div><div class="rowTitle">${esc(p.filename)}</div><div class="rowSub">${esc(p.farm)} ${esc(p.tank)} • ${esc(p.type)} • ${esc(p.date)}</div></div><span class="badge product">photo</span></div><img class="photoThumb" src="${p.dataUrl}" alt="${esc(p.filename)}"><div class="toolbar"><button class="miniBtn" onclick="sharePhoto('${p.id}')">send/share</button><button class="miniBtn" onclick="downloadPhoto('${p.id}')">download</button><button class="miniBtn danger" onclick="deletePhoto('${p.id}')">delete</button></div></div>`).join('') || '<div class="empty">No photos saved locally.</div>';
-  document.getElementById('main').innerHTML=`<div class="panel"><div class="panelTitle">Backup / Import</div><p class="noteLine">Use Download Backup before major edits. This app saves on this browser only unless you export/import JSON.</p><div class="toolbar"><button class="primaryBtn" onclick="downloadBackup()">Download Backup</button><button class="ghostBtn" onclick="runDataCleanup()">Clean Current Data</button><button class="ghostBtn" onclick="copyText(JSON.stringify(state,null,2))">Copy JSON</button><label class="ghostBtn" for="backupFile">Import Backup File</label><input id="backupFile" type="file" accept="application/json,.json" style="display:none" onchange="importBackupFile(this.files[0])"><button class="dangerBtn" onclick="resetSeed()">Reset Local Data</button></div><p class="meta">Shell v2.3: complete buttons for Today reminders/route buckets, grouped whole-farm Mix picker, water-table-ready Mix defaults, plus v2.1 farm-condensed route/detail/meeting/Amino/GPS/photos/undo.</p><div class="warnBox"><b>Photos:</b> ${photoCount} photo(s) stored locally on this phone/browser. Photos are not included in the normal JSON backup yet so backups stay small. Use Send/Share or Download on important photos.</div><div class="field"><label>Import full backup JSON by paste</label><textarea id="importJson" placeholder="Paste exported tracker backup JSON here"></textarea></div><div class="toolbar"><button class="ghostBtn" onclick="importBackup()">Import Full Backup</button></div></div>
+  document.getElementById('main').innerHTML=`<div class="panel"><div class="panelTitle">Backup / Import</div><p class="noteLine">Use Download Backup before major edits. This app saves on this browser only unless you export/import JSON.</p><div class="toolbar"><button class="primaryBtn" onclick="downloadBackup()">Download Backup</button><button class="ghostBtn" onclick="runDataCleanup()">Clean Current Data</button><button class="ghostBtn" onclick="copyText(JSON.stringify(state,null,2))">Copy JSON</button><label class="ghostBtn" for="backupFile">Import Backup File</label><input id="backupFile" type="file" accept="application/json,.json" style="display:none" onchange="importBackupFile(this.files[0])"><button class="dangerBtn" onclick="resetSeed()">Reset Local Data</button></div><p class="meta">Shell v2.5: full chart skeleton/date-span calculator from locked flock start dates, plus water-table Mix and grouped route/meeting/GPS/Amino/photo tools.</p><div class="warnBox"><b>Photos:</b> ${photoCount} photo(s) stored locally on this phone/browser. Photos are not included in the normal JSON backup yet so backups stay small. Use Send/Share or Download on important photos.</div><div class="field"><label>Import full backup JSON by paste</label><textarea id="importJson" placeholder="Paste exported tracker backup JSON here"></textarea></div><div class="toolbar"><button class="ghostBtn" onclick="importBackup()">Import Full Backup</button></div></div>
   <div class="panel"><div class="panelHead"><div><div class="panelTitle">Photo Inbox</div><div class="meta">For lock-screen pictures. Upload/select photo, assign farm/house/type, app auto-names and attaches it.</div></div><button class="primaryBtn" onclick="openModal('photoInbox')">+ Upload Existing Photo</button></div><div class="photoInboxGrid">${photoRows}</div></div>
   <div class="panel"><div class="panelHead"><div><div class="panelTitle">Import Current Route Update JSON</div><div class="meta">Use this for corrected flock/status/product updates. It merges and preserves custom notes when possible.</div></div></div><div class="field"><label>Current route update JSON</label><textarea id="currentUpdateJson" style="min-height:180px" placeholder="Paste current route update JSON here"></textarea></div><div class="toolbar"><button class="primaryBtn" onclick="importCurrentUpdatePaste()">Merge Current Update</button></div></div>
   <div class="panel"><div class="panelHead"><div><div class="panelTitle">Undo / Local Snapshots</div><div class="meta">Auto-snapshots are stored locally before saves/imports. Good for accidental edits/deletes.</div></div><button class="ghostBtn" onclick="clearSnapshots()">Clear snapshots</button></div><div class="cards">${snapRows}</div></div>`;
@@ -628,22 +700,28 @@ function renderDetail(){
 }
 function metaBlock(f){return `<div class="chartMeta"><div><b>Farm</b>${esc(f.farm)}</div><div><b>Tank</b>${esc(f.tank)}</div><div><b>Date placed/move</b>${esc(f.moveDate||f.originalStart||'?')}</div><div><b>Strain</b>${esc(f.strain||'?')}</div><div><b>Flock #</b>${esc(f.flockNo)}</div><div><b>Headcount</b>${esc(f.startHeadcount)}</div></div>`;}
 function detailChart(f){
-  const entries=(f.mortalityEntries||[]).map(normalizeMortalityEntry);
+  const chartRows=buildWholeChartRows(f);
   const totalMort=calcTotalMortality(f);
   const start=parseFloat(String(f.startHeadcount||'').replace(/,/g,''));
   const current=currentCountEstimate(f,totalMort);
   const mortPct=percentText(totalMort,start);
   const curPct=(start&&current!=='?')?percentText(parseFloat(String(current).replace(/,/g,'')),start):'';
-  const rows=entries.map((e,i)=>{
-    const rowClass=e.aminoEntered?'entered':(e.aminoReady?'ready':(e.uncertain?'verify':(e.soFar?'sofar':'')));
-    const statusBadge=e.aminoEntered?' <span class="badge complete">entered</span>':(e.aminoReady?' <span class="badge complete">ready</span>':(e.soFar?' <span class="badge watch">so far</span>':(e.uncertain?' <span class="badge uncertain">verify</span>':'')));
-    return `<tr class="${rowClass}"><td><b>${esc(e.label)}</b>${e.soFar?'<div class="meta">so far</div>':''}${e.dateSpan?`<div class="meta">${esc(e.dateSpan)}</div>`:''}${statusBadge}</td>${DAYS.map(d=>`<td class="dailyCell num">${esc((e.days&&e.days[d])||'–')}</td>`).join('')}<td class="num"><b>${esc(displayMortality(e))}</b><div class="rowActions"><button class="miniBtn" onclick="toggleMortalityEntered('${f.id}',${i})">${e.aminoEntered?'unenter':'entered'}</button>${e.uncertain||e.soFar?`<button class="miniBtn" onclick="verifyMortalityEntry('${f.id}',${i})">verify</button>`:''}<button class="miniBtn danger" onclick="deleteMortalityEntry('${f.id}',${i})">delete</button></div></td></tr>`;
+  const startInfo=flockStartInfo(f);
+  const startHelp=startInfo.date ? `Date spans calculated from ${startInfo.source}: ${fmtMDYY(startInfo.date)}. Move date stays separate.` : `Date spans need a locked original birthday/start date. Add it in Overview → Edit.`;
+  const rows=chartRows.map(r=>{
+    const e=r.e; const i=r.i;
+    const rowClass=r.synthetic?'':(e.aminoEntered?'entered':(e.aminoReady?'ready':(e.uncertain?'verify':(e.soFar?'sofar':''))));
+    const statusBadge=r.synthetic?' <span class="badge uncertain">blank</span>':(e.aminoEntered?' <span class="badge complete">entered</span>':(e.aminoReady?' <span class="badge complete">ready</span>':(e.soFar?' <span class="badge watch">so far</span>':(e.uncertain?' <span class="badge uncertain">verify</span>':''))));
+    const label=entryDisplayLabel(f,e,r.week);
+    const total=r.synthetic?'–':displayMortality(e);
+    const buttons=r.synthetic?`<div class="rowActions"><button class="miniBtn" onclick="openModal('mortality','${f.id}')">add</button></div>`:`<div class="rowActions"><button class="miniBtn" onclick="toggleMortalityEntered('${f.id}',${i})">${e.aminoEntered?'unenter':'entered'}</button>${e.uncertain||e.soFar?`<button class="miniBtn" onclick="verifyMortalityEntry('${f.id}',${i})">verify</button>`:''}<button class="miniBtn danger" onclick="deleteMortalityEntry('${f.id}',${i})">delete</button></div>`;
+    return `<tr class="${rowClass}"><td><b>${esc(label)}</b>${r.dateSpan?`<div class="meta">${esc(r.dateSpan)}</div>`:''}${statusBadge}</td>${DAYS.map(d=>`<td class="dailyCell num">${esc((e.days&&e.days[d])||'–')}</td>`).join('')}<td class="num"><b>${esc(total)}</b>${buttons}</td></tr>`;
   }).join('') || `<tr><td colspan="9" class="empty">No mortality rows yet. Add weekly/daily entry below.</td></tr>`;
   const ready=aminoReadyRows(f);
   const held=heldMortalityRows(f);
   const aminoRows=ready.join('\n') || `No Amino-ready rows yet. Uncertain/current rows are held until verified.`;
   const heldText=held.join('\n') || 'No held rows.';
-  return `<div class="panel">${metaBlock(f)}<div class="toolbar"><button class="primaryBtn" onclick="openModal('mortality','${f.id}')">+ Add Mortality</button><button class="ghostBtn" onclick="openModal('photo','${f.id}')">+ Chart Photo</button><button class="ghostBtn" onclick="jumpToMix('${f.id}')">Calculate Water Mix</button><button class="ghostBtn" onclick="openModal('chartImport','${f.id}')">Paste ChatGPT Chart Block</button><button class="ghostBtn" onclick="copyAminoRows('${f.id}')">Copy Amino Rows</button></div><div class="inlineHelp">Whole chart view. Green = entered in Amino, pale green = ready, yellow = current/so far, pink = verify/hold.</div><div class="chartWrap"><table class="chart wholeChart"><thead><tr><th>Week</th>${DAYS.map((d,i)=>`<th>${i+1}<br><span class="meta">${d}</span></th>`).join('')}<th>Total</th></tr></thead><tbody>${rows}</tbody></table><div class="chartTotals"><div><div class="meta">Total Mortality</div><div class="big mort">${esc(totalMort?Math.round(totalMort).toLocaleString():'?')}</div><div class="meta">${esc(mortPct)}</div></div><div><div class="meta">Estimated Current Count</div><div class="big count">${esc(current)}</div><div class="meta">${esc(curPct)}</div></div></div></div><div class="panel" style="box-shadow:none;margin-top:12px"><div class="panelTitle">Amino-ready rows</div><div class="copyBox">${esc(aminoRows)}</div></div><div class="panel" style="box-shadow:none;margin-top:12px"><div class="panelTitle">Held / verify before Amino</div><div class="copyBox">${esc(heldText)}</div></div></div>`;
+  return `<div class="panel">${metaBlock(f)}<div class="toolbar"><button class="primaryBtn" onclick="openModal('mortality','${f.id}')">+ Add Mortality</button><button class="ghostBtn" onclick="openModal('photo','${f.id}')">+ Chart Photo</button><button class="ghostBtn" onclick="jumpToMix('${f.id}')">Calculate Water Mix</button><button class="ghostBtn" onclick="openModal('chartImport','${f.id}')">Paste ChatGPT Chart Block</button><button class="ghostBtn" onclick="copyAminoRows('${f.id}')">Copy Amino Rows</button></div><div class="inlineHelp">Whole chart view. Green = entered in Amino, pale green = ready, yellow = current/so far, pink = verify/hold. ${esc(startHelp)}</div><div class="chartWrap"><table class="chart wholeChart"><thead><tr><th>Week</th>${DAYS.map((d,i)=>`<th>${i+1}<br><span class="meta">${d}</span></th>`).join('')}<th>Total</th></tr></thead><tbody>${rows}</tbody></table><div class="chartTotals"><div><div class="meta">Total Mortality</div><div class="big mort">${esc(totalMort?Math.round(totalMort).toLocaleString():'?')}</div><div class="meta">${esc(mortPct)}</div></div><div><div class="meta">Estimated Current Count</div><div class="big count">${esc(current)}</div><div class="meta">${esc(curPct)}</div></div></div></div><div class="panel" style="box-shadow:none;margin-top:12px"><div class="panelTitle">Amino-ready rows</div><div class="copyBox">${esc(aminoRows)}</div></div><div class="panel" style="box-shadow:none;margin-top:12px"><div class="panelTitle">Held / verify before Amino</div><div class="copyBox">${esc(heldText)}</div></div></div>`;
 }
 function detailPhotos(f){
   const rows=photosForFlock(f);
